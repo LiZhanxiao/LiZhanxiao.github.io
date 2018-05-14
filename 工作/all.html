@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>
+  
+  
+  
+
+  </title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+  <script src="asset/js/modernizr-2.0.js"></script>
+  <script src="asset/js/jquery.min.js"></script>
+  <script src="asset/highlightjs/highlight.pack.js"></script>
+  <link href="asset/highlightjs/styles/solarized_light.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <style type="text/css">
+  .cat-children-p{ padding: 6px 0px;}
+  .hljs{background: none;}
+  </style>
+  <script type="text/javascript">
+  var isAddSildbar = true;
+  </script>
+  <script src="asset/js/octopress.js" type="text/javascript"></script>
+</head>
+<script type="text/javascript">
+//链接新开窗口
+function addBlankTargetForLinks () {
+  $('a[href^="http"]').each(function(){
+      $(this).attr('target', '_blank');
+  });
+}
+$(document).ready(function(event) {
+  addBlankTargetForLinks();
+});
+</script>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="index.html"></a></h1>
+  
+    <h2></h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+
+  <li id=""><a target="self" href="index.html">Home</a></li>
+
+  <li id=""><a target="_self" href="archives.html">Archives</a></li>
+
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content"> 
+<div class="blog-index">
+
+	<article>
+		 <header>
+		  	<h1 class="entry-title"><a href="15262979586256.html">直播流程</a></h1>
+			<p class="meta"><time datetime="2018-05-14T19:39:18+08:00" 
+			pubdate data-updated="true">2018/5/14</time></p>
+		 </header>
+	  	<div class="entry-content">
+		  	
+		  	<h2 id="toc_0">一对多</h2>
+
+<p>进入页面后，首先调用<strong>初始化布局方法</strong></p>
+
+<pre><code class="language-java"> public void initLayoutView() {
+        if (Global.user.amITeacher()) {
+            if (mLiveBundleData.isO2O()) {
+                mLiteView.getViewHelper().initLayoutTeacherLiveViewO2O(mOnlineManager.getDownFormList().get(0));
+            } else {
+                mLiteView.getViewHelper().initLayoutTeacherLiveViewO2M();
+            }
+        } else {
+            if (mLiveBundleData.isO2O()) {
+                mLiteView.getViewHelper().initLayoutStudentLiveViewO2O(mOnlineManager.isHostOnline());
+            } else {
+                mLiteView.getViewHelper().initLayoutStudentLiveViewO2M(mOnlineManager.getUpFormUser(), mOnlineManager.isHostOnline());
+            }
+        }
+    }
+</code></pre>
+
+<h3 id="toc_1">创建流程</h3>
+
+<ul>
+<li>老师端点击<strong>开始上课</strong>按钮后</li>
+</ul>
+
+<p>老师端需要显示老师的画面(在刚开始时已经初始化过)</p>
+
+<ul>
+<li>加载在房间的学生画面</li>
+</ul>
+
+<pre><code class="language-java">for (SLiveOnlineUser sLiveOnlineUser : mOnlineManager.getDownFormList()) {
+    mLiteView.getViewHelper().studentEnterO2M(sLiveOnlineUser);
+} 
+</code></pre>
+
+<ul>
+<li>学生端
+
+<ul>
+<li>收到<strong>开课通知</strong>
+
+<ul>
+<li>更新Room信息</li>
+<li>显示老师的画面，显示学生自己的画面，显示其他学生的画面</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<pre><code class="language-java">if (isStartCreated) {
+    mLiteView.getViewHelper().onStartLiveForStudentO2M(mOnlineManager.getDownFormList());
+} else {
+    mLiteView.getViewHelper().startLinkingToStudentsO2M(mOnlineManager.getDownFormList());
+}
+</code></pre>
+
+<h3 id="toc_2">进入房间流程</h3>
+
+<ul>
+<li>老师端进入房间</li>
+</ul>
+
+<pre><code class="language-java">mLiteView.getViewHelper().startLinkingToStudentsO2M(mOnlineManager.getDownFormList());
+</code></pre>
+
+
+		</div>
+
+		
+
+	</article>
+ 
+	<article>
+		 <header>
+		  	<h1 class="entry-title"><a href="15262913988043.html">测试命令</a></h1>
+			<p class="meta"><time datetime="2018-05-14T17:49:58+08:00" 
+			pubdate data-updated="true">2018/5/14</time></p>
+		 </header>
+	  	<div class="entry-content">
+		  	
+		  	<ul>
+<li><code>./gradlew fastdexDebug -PDEVICE_SN=73e56143</code></li>
+<li><code>./gradlew fastdexDebug -PDEVICE_SN=6d33c43c7d03</code></li>
+</ul>
+
+<hr/>
+
+
+		</div>
+
+		
+
+	</article>
+ 
+	<article>
+		 <header>
+		  	<h1 class="entry-title"><a href="15244696729267.html">点读</a></h1>
+			<p class="meta"><time datetime="2018-04-23T15:47:52+08:00" 
+			pubdate data-updated="true">2018/4/23</time></p>
+		 </header>
+	  	<div class="entry-content">
+		  	
+		  	<h2 id="toc_0">UI</h2>
+
+<h3 id="toc_1">顶部</h3>
+
+<ul>
+<li>将<strong>听</strong>改图至<strong>听⏸</strong>或<strong>听▶️</strong></li>
+<li>将<strong>读</strong>改图至<strong>默读</strong></li>
+<li>移除<strong>▶️</strong>按钮，通能移植到<strong>听▶️</strong>上</li>
+<li>有点读功能
+
+<ul>
+<li>显示<strong>点读</strong>功能按钮</li>
+</ul></li>
+<li>无点读功能
+
+<ul>
+<li>显示<strong>跟读</strong>功能按钮</li>
+</ul></li>
+</ul>
+
+<hr/>
+
+<p>- 点击点读按钮<br/>
+ - 显示<code>转至连续</code></p>
+
+
+		</div>
+
+		
+
+	</article>
+ 
+	<article>
+		 <header>
+		  	<h1 class="entry-title"><a href="15231637537116.html">直播接口Tag字符串整理</a></h1>
+			<p class="meta"><time datetime="2018-04-08T13:02:33+08:00" 
+			pubdate data-updated="true">2018/4/8</time></p>
+		 </header>
+	  	<div class="entry-content">
+		  	
+		  	<h2 id="toc_0"><code>Live/Room/Lecture</code></h2>
+
+<ul>
+<li>请求<code>tst_q_qiu</code></li>
+<li>提示
+
+<ul>
+<li>成功不显示</li>
+<li>请求失败</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_1"><del><code>Live/Room/Leave</code></del></h2>
+
+<h2 id="toc_2"><del><code>Live/Room/Speak</code></del></h2>
+
+<h2 id="toc_3"><del><code>Live/Room/Hand</code></del></h2>
+
+<h2 id="toc_4"><del><code>Live/Room/Hand/Person</code></del></h2>
+
+<h2 id="toc_5"><del><code>Live/Room/%s/User</code></del></h2>
+
+<h2 id="toc_6"><del><code>Live/Room/Mixedflow</code></del></h2>
+
+<h2 id="toc_7"><code>Live/Room</code> 创建直播室</h2>
+
+<ul>
+<li>tst_c_jian 创建</li>
+<li>提示
+
+<ul>
+<li>成功不显示</li>
+<li>  创建失败</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_8"><code>Live/Room/Join</code> 进入直播间</h2>
+
+<ul>
+<li><p>description_jrjs 进入教室</p></li>
+<li><p>提示语</p>
+
+<ul>
+<li>  成功不提示</li>
+<li>  进入教室失败</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_9"><del><code>Live/Room/Record</code> 录制</del></h2>
+
+<h2 id="toc_10"><code>Live/Room/Close</code></h2>
+
+<ul>
+<li><p>message_tst_close_course 结束课程</p></li>
+<li><p>提示语</p>
+
+<ul>
+<li>结束课程成功</li>
+<li>结束课程失败</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_11"><del><code>Live/Heartbeat</code></del></h2>
+
+
+		</div>
+
+		
+
+	</article>
+  
+	<div class="pagination">
+	
+<a href="archives.html">Blog Archives</a>
+	 
+	    
+	</div>
+</div>
+ <aside class="sidebar"> 
+
+	<section>
+	  <h1>Categories</h1>
+	  <ul id="recent_posts">
+	  
+	      <li class="post">
+	        <a href="%E9%A2%86%E8%A7%86%E7%A7%91%E6%8A%80.html"><strong>领视科技&nbsp;(3)</strong></a>
+	         <p class="cat-children-p"> 
+	        
+	        	<a href="%E7%9B%B4%E6%92%AD.html">直播&nbsp;(2)</a>&nbsp;&nbsp;
+	        
+	         </p> 
+	      </li>
+	   
+	  </ul>
+	</section>
+	<section>
+	  <h1>Recent Posts</h1>
+	  <ul id="recent_posts">
+	  
+	      
+		      <li class="post">
+		        <a href="15262979586256.html">直播流程</a>
+		      </li>
+	     
+	  
+	      
+		      <li class="post">
+		        <a href="15262913988043.html">测试命令</a>
+		      </li>
+	     
+	  
+	      
+		      <li class="post">
+		        <a href="15244696729267.html">点读</a>
+		      </li>
+	     
+	  
+	      
+		      <li class="post">
+		        <a href="15231637537116.html">直播接口Tag字符串整理</a>
+		      </li>
+	     
+	   
+	  </ul>
+	</section>
+	
+</aside> </div></div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 -  -
+  <span class="credit">Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; Theme by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+
+  
+    
+
+
+
+
+</body>
+</html>
