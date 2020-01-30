@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>客户问题</title>
   <id>http://www.lizhanxiao.online</id>
-  <updated>2020-01-30T22:47:24+08:00</updated>
+  <updated>2020-01-30T22:59:25+08:00</updated>
   <subtitle>统计客户遇到的疑惑或客户问题的处理方式</subtitle>
   <link href="http://www.lizhanxiao.online"></link>
   <author>
     <name>客户问题</name>
   </author>
+  <entry>
+    <title>登录时提示密码或账号错误的</title>
+    <updated>2020-01-30T22:58:00+08:00</updated>
+    <id>tag:www.lizhanxiao.online,2020-01-30:/登录时提示密码或账号错误的.html</id>
+    <content type="html">&lt;p&gt;先确认客户是不是多学科机构&lt;/p&gt;&#xA;</content>
+    <link href="http://www.lizhanxiao.online/登录时提示密码或账号错误的.html"></link>
+    <author>
+      <name>Lzx</name>
+    </author>
+  </entry>
+  <entry>
+    <title>直播中无法打开自制教材</title>
+    <updated>2020-01-30T22:52:00+08:00</updated>
+    <id>tag:www.lizhanxiao.online,2020-01-30:/直播中无法打开自制教材.html</id>
+    <content type="html">&lt;p&gt;只针对版本2.3.11.8879及之前版本，在这之后要去修复(记录时间：2020年1月30日22:52:56)&lt;/p&gt;&#xA;</content>
+    <link href="http://www.lizhanxiao.online/直播中无法打开自制教材.html"></link>
+    <author>
+      <name>Lzx</name>
+    </author>
+  </entry>
   <entry>
     <title>进入教室失败</title>
     <updated>2020-01-30T22:46:00+08:00</updated>
