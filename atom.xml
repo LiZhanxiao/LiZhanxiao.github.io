@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>纸小墨官方博客</title>
   <id>http://www.lizhanxiao.online</id>
-  <updated>2020-01-30T14:16:41+08:00</updated>
+  <updated>2020-01-30T22:09:13+08:00</updated>
   <subtitle>构建只为纯粹书写的博客</subtitle>
   <link href="http://www.lizhanxiao.online"></link>
   <author>
     <name>纸小墨官方博客</name>
   </author>
+  <entry>
+    <title>没有视频、声音</title>
+    <updated>2020-01-30T22:00:00+08:00</updated>
+    <id>tag:www.lizhanxiao.online,2020-01-30:/没有视频、声音.html</id>
+    <content type="html">&lt;p&gt;课前在个人中心使用 &lt;strong&gt;直播配置&lt;/strong&gt;进行调试&lt;/p&gt;&#xA;</content>
+    <link href="http://www.lizhanxiao.online/没有视频、声音.html"></link>
+    <author>
+      <name>纸小墨</name>
+    </author>
+  </entry>
   <entry>
     <title>测试</title>
     <updated>2020-01-30T14:10:00+08:00</updated>
