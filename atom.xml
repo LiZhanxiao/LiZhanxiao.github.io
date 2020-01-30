@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>客户问题</title>
   <id>http://www.lizhanxiao.online</id>
-  <updated>2020-01-30T22:38:56+08:00</updated>
+  <updated>2020-01-30T22:47:24+08:00</updated>
   <subtitle>统计客户遇到的疑惑或客户问题的处理方式</subtitle>
   <link href="http://www.lizhanxiao.online"></link>
   <author>
     <name>客户问题</name>
   </author>
+  <entry>
+    <title>进入教室失败</title>
+    <updated>2020-01-30T22:46:00+08:00</updated>
+    <id>tag:www.lizhanxiao.online,2020-01-30:/进入教室失败.html</id>
+    <content type="html">&lt;p&gt;目前还无法确认到底是哪的问题，但定位到阿里log上传的一个bug，会在118879之后的版本修复掉&lt;/p&gt;&#xA;</content>
+    <link href="http://www.lizhanxiao.online/进入教室失败.html"></link>
+    <author>
+      <name>Lzx</name>
+    </author>
+  </entry>
   <entry>
     <title>直播配置正确时的表现</title>
     <updated>2020-01-30T22:31:00+08:00</updated>
