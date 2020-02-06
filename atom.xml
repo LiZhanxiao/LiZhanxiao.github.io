@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>客户问题</title>
   <id>http://www.lizhanxiao.online</id>
-  <updated>2020-01-30T23:05:37+08:00</updated>
+  <updated>2020-02-06T18:41:36+08:00</updated>
   <subtitle>统计客户遇到的疑惑或客户问题的处理方式</subtitle>
   <link href="http://www.lizhanxiao.online"></link>
   <author>
     <name>客户问题</name>
   </author>
+  <entry>
+    <title>禁止发言功能</title>
+    <updated>2020-02-06T18:35:00+08:00</updated>
+    <id>tag:www.lizhanxiao.online,2020-02-06:/禁止发言功能.html</id>
+    <content type="html">&lt;p&gt;什么状态是禁止发言，什么状态又是允许发言呢？&lt;/p&gt;&#xA;</content>
+    <link href="http://www.lizhanxiao.online/禁止发言功能.html"></link>
+    <author>
+      <name>Lzx</name>
+    </author>
+  </entry>
   <entry>
     <title>登录时提示密码或账号错误的</title>
     <updated>2020-01-30T22:58:00+08:00</updated>
